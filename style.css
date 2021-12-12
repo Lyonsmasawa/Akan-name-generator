@@ -27,13 +27,14 @@ html {
 
 body {
     padding: .1rem;
+    margin: 1rem;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background: rgba(0, 0, 0, 0.247);
-    height: 100vh;
+    height: 100%;
 }
 
 header {
@@ -42,7 +43,7 @@ header {
     font-size: 1.8rem;
     background-color: aliceblue;
     padding: 4.9rem;
-    width: 40%;
+    width: 80vh;
 }
 
 #anim {
@@ -55,7 +56,7 @@ span {
 }
 
 main {
-    width: 40%;
+    width: 80vh;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -189,7 +190,7 @@ footer {
     display: flex;
     background-color: black;
     color: white;
-    width: 40%;
+    width: 80vh;
     padding: 1rem;
     font-style: italic;
     letter-spacing: .3rem;
@@ -222,8 +223,76 @@ footer {
     align-items: center;
     justify-content: space-around;
 }
-.style{
+
+.style {
     background-color: aliceblue;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.103);
     padding: .2rem;
+}
+
+/*  media queries */
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+        margin: 0rem;
+    }
+
+    body {
+        height: 100vh;
+        margin: 0rem;
+        padding: 1rem;
+    }
+
+    main {
+        width: 100%;
+        margin: 0rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .form-part {
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width:720px) {
+    html {
+        font-size: 50%;
+        margin: 0rem;
+    }
+
+    body {
+        height: 100vh;
+        margin: 0rem;
+        padding: 1rem;
+    }
+
+    main {
+        width: 100%;
+        margin: 0rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .form-part {
+        width: 100%;
+    }
+    .dates-input{
+        flex-wrap: wrap;
+    }
+
 }
