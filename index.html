@@ -31,7 +31,7 @@
             <p>Enter your corresponding birth details in the form below to get your answer!</p>
         </div>
         <div class="form-part">
-            <form class="inputform" onsubmit="validateInput()">
+            <form class="inputform" onsubmit="genName()">
                 <h2>Select Gender:</h2>
                 <div class="gender-part">
                     <input type="radio" name="gender" id="m" value="male" required>
@@ -44,25 +44,25 @@
                     <div class="day-sec">
                         <label for="dob">
                             <h3>Day of Birth:</h3>
-                            <input type="number" name="dob" id="day" placeholder="DD" required>
+                            <input type="number" name="dob" id="day" placeholder="DD" value="" required>
                         </label>
                     </div>
                     <div class="month-sec">
                         <label for="mob">
                             <h3>Birth Month:</h3>
-                            <input type="number" name="mob" id="month" placeholder="MM" required>
+                            <input type="number" name="mob" id="month" placeholder="MM" value="" required>
                         </label>
                     </div>
                     <div class="year-sec">
                         <label for="yob">
                             <h3>Year of Birth:</h3>
-                            <input type="number" name="yob" id="year" placeholder="CCYY" required>
+                            <input type="number" name="yob" id="year" placeholder="CCYY" value="" required>
                         </label>
                     </div>
                 </div>
                 <div class="sec">
                     <img src="img/handflag.jpg" alt="" width="10%">
-                    <input type="submit" value="Generate Name" onclick="genName()" id="gen-name">
+                    <input type="submit" value="Generate Name" id="gen-name" onclick="genName()">
                 </div>
             </form>
             <!-- <form class="inputform" onsubmit="editDetails()">
@@ -70,7 +70,7 @@
             </form> -->
         </div>
         <div class="akan-name">
-            <p class="one">Hey <span>(name)</span>, you were born on <span>(day)</span></p>
+            <p class="one">Hey <span id="name-k">(name)</span>, you were born on <span id="day-k">(day)</span></p>
             <p class="two"><i>Take your time, make your moves, It pays off</i></p>
         </div>
     </main>
