@@ -2,12 +2,20 @@ function genName() {
     //arrays
     let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
     let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-    let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     //get input values
     let yearOfBirth = document.getElementById("year").value;
     let month = document.getElementById("month").value;
     let day = document.getElementById("day").value;
+
+    //validate year{
+    if (yearOfBirth < 1 || yearOfBirth > 2021 && yearOfBirth.length() != 4) {
+        alert("Please enter a valid year(\"0001 - 2021\")");
+    } else {
+        return true;
+    }
+
 
     //validate month
     function validateMonth() {
@@ -19,7 +27,7 @@ function genName() {
     }
 
     //validate day
-    function vaidateDay() {
+    function validateDay() {
         if (day == 2 && (yearOfBirth) % 4 == 0) {
             if (day < 1 || day > 28) {
                 alert("please enter a valid date(\"1-28\")");
@@ -44,4 +52,7 @@ function genName() {
             let gender = "female";
         }
     }
+
+    //determine day of the week
+
 }
