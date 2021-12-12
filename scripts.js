@@ -92,5 +92,30 @@ function genName() {
             document.getElementById("day-k").innerHTML = dayNames[6];
             document.getElementById("name-k").innerHTML = maleNames[6];
         }
+    } else if (gender == "male" && yearOkay == true && dayOkay == true && monthOkay == true) {
+        if (dayOfTheWeek == 0) {
+            document.getElementById("day-k").innerHTML = dayNames[0];
+            document.getElementById("name-k").innerHTML = femaleNames[0];
+        } else if (dayOfTheWeek == 1) {
+            document.getElementById("day-k").innerHTML = dayNames[1];
+            document.getElementById("name-k").innerHTML = femaleNames[1];
+        } else if (dayOfTheWeek == 2) {
+            document.getElementById("day-k").innerHTML = dayNames[2];
+            document.getElementById("name-k").innerHTML = femaleNames[2];
+        } else if (dayOfTheWeek == 3) {
+            document.getElementById("day-k").innerHTML = dayNames[3];
+            document.getElementById("name-k").innerHTML = femaleNames[3];
+        } else if (dayOfTheWeek == 4) {
+            document.getElementById("day-k").innerHTML = dayNames[4];
+            document.getElementById("name-k").innerHTML = femaleNames[4];
+        } else if (dayOfTheWeek == 5) {
+            document.getElementById("day-k").innerHTML = dayNames[5];
+            document.getElementById("name-k").innerHTML = femaleNames[5];
+        } else if (dayOfTheWeek == 6) {
+            document.getElementById("day-k").innerHTML = dayNames[6];
+            document.getElementById("name-k").innerHTML = femaleNames[6];
+        }
+    } else {
+        return false;
     }
 }
