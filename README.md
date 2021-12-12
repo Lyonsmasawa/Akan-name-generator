@@ -26,6 +26,7 @@ Akan names are derived from Ghanian culture. Frequently in Ghana, children are g
 This is my portfolio, made with HTML and CSS.
   - HTML for the page structure.
   - CSS for the page styling.
+  - JS for functionality.
   - MARKDOWN for writing the README.
 
 ## To use the template.
