@@ -54,6 +54,13 @@ function genName() {
         }
     }
 
-    //determine day of the week
+    //determine day of the week the user was born
+    function calcDay() {
+        CC = parseInt(yearOfBirth.slice(0, 1));
+        YY = parseInt(yearOfBirth.slice(2, 3));
+        MM = parseInt(month);
+        DD = parseInt(day);
+        dayOftheWeek = mathe.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
+    }
 
 }
