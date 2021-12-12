@@ -24,25 +24,33 @@
         </div>
         <div class="form-part">
             <form action="" class="inputform">
-
-                <h2>Birth Details</h2>
-                <div class="day-sec">
-                    <label for="dob">
-                        <h3>Day of Birth:</h3>
-                        <input type="number" name="dob" id="day" placeholder="DD" required>
-                    </label>
+                <div class="gender-part">
+                    <h2>Select gender:</h2>
+                    <input type="radio" name="gender" id="m" value="male" required>
+                    Male
+                    <input type="radio" name="gender" id="f" value="female" required>
+                    Female
                 </div>
-                <div class="month-sec">
-                    <label for="mob">
-                        <h3>Birth Month:</h3>
-                        <input type="number" name="mob" id="month" placeholder="MM" required>
-                    </label>
-                </div>
-                <div class="year-sec">
-                    <label for="yob">
-                        <h3>Year of Birth:</h3>
-                        <input type="number" name="yob" id="year" placeholder="CCYY" required>
-                    </label>
+                <div class="dates-input">
+                    <h2>Birth Details</h2>
+                    <div class="day-sec">
+                        <label for="dob">
+                            <h3>Day of Birth:</h3>
+                            <input type="number" name="dob" id="day" placeholder="DD" required>
+                        </label>
+                    </div>
+                    <div class="month-sec">
+                        <label for="mob">
+                            <h3>Birth Month:</h3>
+                            <input type="number" name="mob" id="month" placeholder="MM" required>
+                        </label>
+                    </div>
+                    <div class="year-sec">
+                        <label for="yob">
+                            <h3>Year of Birth:</h3>
+                            <input type="number" name="yob" id="year" placeholder="CCYY" required>
+                        </label>
+                    </div>
                 </div>
             </form>
         </div>
