@@ -13,16 +13,30 @@ function genName() {
     function validateMonth() {
         if (month < 1 || month > 12) {
             alert('Please enter a valid month("1-12")');
+        } else {
+            return true;
         }
     }
-    
+
     //validate day
     function vaidateDay() {
-        
+        if (day == 2 && (yearOfBirth) % 4 == 0) {
+            if (day < 1 || day > 28) {
+                alert("please enter a valid date(\"1-28\")");
+            } else if (day < 1 || day > 29) {
+                alert("please enter a valid date(\"1-29\")");
+            } else {
+                return true;
+            }
+        } else if (day < 1 || day > 31) {
+            alert("Please enter valid date(\"1-31\")");
+        } else {
+            return true;
+        }
     }
 
     //get gender value
-    function getGender {
+    function getGender() {
         let genderValue = document.getElementsByName("gender");
         if (genderValue.checked[0]) {
             let gender = "male";
