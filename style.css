@@ -231,7 +231,7 @@ footer {
 }
 
 /*  media queries */
-@media (max-width:1200px) {
+@media (max-width:1024px) {
     html {
         font-size: 45%;
         margin: 0rem;
@@ -279,7 +279,7 @@ footer {
     }
 }
 
-@media (max-width:720px) {
+@media ((max-width:720px) and (min-width:960px)) {
     html {
         font-size: 50%;
         margin: 0rem;
