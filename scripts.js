@@ -92,7 +92,7 @@ function genName() {
             document.getElementById("day-k").innerHTML = dayNames[6];
             document.getElementById("name-k").innerHTML = maleNames[6];
         }
-    } else if (gender == "male" && yearOkay == true && dayOkay == true && monthOkay == true) {
+    } else if (gender == "female" && yearOkay == true && dayOkay == true && monthOkay == true) {
         if (dayOfTheWeek == 0) {
             document.getElementById("day-k").innerHTML = dayNames[0];
             document.getElementById("name-k").innerHTML = femaleNames[0];
