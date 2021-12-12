@@ -1,4 +1,4 @@
 //arrays
 let maleNames = ["Kwasi", "Kwadwo", "Kwabena","Kwaku","Yaw","Kofi", "Kwame"];
-let femaleNames = ["Kwasi", "Kwadwo", "Kwabena","Kwaku","Yaw","Kofi", "Kwame"];
-let day = ["Sunday", "Monday", "Tuesday", "Wednesday", ""]
+let femaleNames = ["Akosua", "Adwoa", "Abenaa","Akua","Yaa","Afua", "Ama"];
+let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
