@@ -23,20 +23,21 @@
     <main>
         <div class="instruction">
             <h2>Akan Name Generator</h2>
+            <hr>
             <h3>Interested to see what your Akan name would be?</h3>
             <p>Enter your corresponding birth details in the form below to get your answer!</p>
         </div>
         <div class="form-part">
             <form class="inputform" onsubmit="genName()">
+                <h2>Select Gender:</h2>
                 <div class="gender-part">
-                    <h2>Select Gender:</h2>
                     <input type="radio" name="gender" id="m" value="male" required>
                     Male
                     <input type="radio" name="gender" id="f" value="female" required>
                     Female
                 </div>
+                <h2>Enter your Birth Details below</h2>
                 <div class="dates-input">
-                    <h2>Enter your Birth Details below</h2>
                     <div class="day-sec">
                         <label for="dob">
                             <h3>Day of Birth:</h3>
@@ -63,8 +64,8 @@
             </form> -->
         </div>
         <div class="akan-name">
-            <p>Hey (name), you were born on (day)</p>
-            <p>Take your time, make your moves, It pays off</p>
+            <p>Hey <span>(name)</span>, you were born on <span>(day)</span></p>
+            <p><i>Take your time, make your moves, It pays off</i></p>
         </div>
     </main>
     <footer>
