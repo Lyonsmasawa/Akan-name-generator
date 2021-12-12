@@ -34,8 +34,17 @@ header{
     font-size: 2rem;
     background-color: aliceblue;
     padding: 2rem;
+    width: 60%;
 }
 span{
     color: red;
-    animation: blink 3s linear infinite;
+    animation: blink 4s ease-in-out infinite;
+}
+main{
+    background-color: aqua;
+    width: 60%;
+    font-size: 1.5rem
+}
+.instruction{
+    
 }
