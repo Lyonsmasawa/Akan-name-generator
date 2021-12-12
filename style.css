@@ -141,10 +141,13 @@ input{
     align-self: center;
 }
 .akan-name i{
-    background-color: black;
     color: white;
+    background-color: rgba(0, 0, 0, .2);
     animation: blink 3s ease-in-out infinite;
     padding: .3rem 2rem;
+    font-weight: 200;
+    font-size: 1.3rem;
+    letter-spacing: .3rem;
 }
 .two{
     background-color: transparent;
