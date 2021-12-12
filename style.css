@@ -20,6 +20,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, rgba(255, 196, 0, 0.8), rgba(255, 0, 0, 0.5)), url("img/handflag.jpg");
+    background: linear-gradient(135deg, rgba(139, 128, 91, 0.8), rgba(255, 0, 0, 0.5)), url("img/handflag.jpg");
     height: 100vh;
 }
