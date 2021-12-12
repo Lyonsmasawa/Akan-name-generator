@@ -10,12 +10,13 @@ function genName() {
     let day = document.getElementById("day").value;
 
     //validate year{
-    if (yearOfBirth < 1 || yearOfBirth > 2021 && yearOfBirth.length() != 4) {
-        alert("Please enter a valid year(\"0001 - 2021\")");
-    } else {
-        return true;
+    function validateYear() {
+        if (yearOfBirth < 1 || yearOfBirth > 2021 && yearOfBirth.tostring().length != 4) {
+            alert("Please enter a valid year(\"0001 - 2021\")");
+        } else {
+            return true;
+        }
     }
-
 
     //validate month
     function validateMonth() {
