@@ -228,6 +228,7 @@ footer {
     background-color: aliceblue;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.103);
     padding: .2rem;
+    flex-wrap: wrap;
 }
 
 /*  media queries */
@@ -290,9 +291,10 @@ footer {
 
     .form-part {
         width: 100%;
-    }
-    .dates-input{
-        flex-wrap: wrap;
+
     }
 
+    .dates-input {
+        flex-wrap: wrap;
+    }
 }
