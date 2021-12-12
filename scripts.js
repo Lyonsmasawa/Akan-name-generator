@@ -17,6 +17,7 @@ function genName() {
             return true;
         }
     }
+    let yearOkay = validateYear();
 
     //validate month
     function validateMonth() {
@@ -26,6 +27,7 @@ function genName() {
             return true;
         }
     }
+    let monthOkay = validateMonth();
 
     //validate day
     function validateDay() {
@@ -43,26 +45,31 @@ function genName() {
             return true;
         }
     }
+    let dayOkay = validateDay();
 
     //get gender value
     function getGender() {
-        let genderValue = document.getElementsByName("gender");
-        if (genderValue.checked[0]) {
-            let gender = "male";
+        let userGender = document.getElementsByName("gender");
+        if (userGender.checked[0] == true) {
+            return "male";
         } else {
-            let gender = "female";
+            return "female";
         }
     }
+    let gender = getGender();
 
     //determine day of the week the user was born
     function calcDay() {
-        CC = yearOfBirth.slice(0, 2);
-        YY = yearOfBirth.slice(2, 4);
-        MM = month;
-        DD = day;
-        dayOftheWeek = Math.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
+        let CC = yearOfBirth.slice(0, 2);
+        let YY = yearOfBirth.slice(2, 4);
+        let MM = month;
+        let DD = day;
+        return Math.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
     }
+    let dayOfTheWeek = calcDay();
 
     //Conditions to generate name
-
+    if (gender == "male" && yearOkay == true && dayOkay == true && monthOkay == true) {
+        
+    }
 }
