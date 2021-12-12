@@ -5,9 +5,9 @@ function genName() {
     let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     //get input values
-    let yearOfBirth = document.getElementById("year").value;
-    let month = document.getElementById("month").value;
-    let day = document.getElementById("day").value;
+    let yearOfBirth = parse.Int(document.getElementById("year").value);
+    let month = parse.Int(document.getElementById("month").value);
+    let day = parse.Int(document.getElementById("day").value);
 
     //validate year{
     function validateYear() {
@@ -56,11 +56,13 @@ function genName() {
 
     //determine day of the week the user was born
     function calcDay() {
-        CC = parseInt(yearOfBirth.slice(0, 2));
-        YY = parseInt(yearOfBirth.slice(2, 4));
-        MM = parseInt(month);
-        DD = parseInt(day);
-        dayOftheWeek = mathe.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
+        CC = yearOfBirth.slice(0, 2);
+        YY = yearOfBirth.slice(2, 4);
+        MM = month;
+        DD = day;
+        dayOftheWeek = Math.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
     }
+
+    //Conditions to generate name
 
 }
