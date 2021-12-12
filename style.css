@@ -144,8 +144,37 @@ input{
     background-color: black;
     color: white;
     animation: blink 3s ease-in-out infinite;
-    padding: .2rem;
+    padding: .3rem 2rem;
 }
 .two{
     background-color: transparent;
+}
+footer{
+    display: flex;
+    background-color: aqua;
+    width: 40%;
+    padding: 1rem;
+    font-style: italic;
+    letter-spacing: .3rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa {
+    color: black;
+    font-size: 1.9rem;
+    border-radius: 25px;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa:hover {
+    color: red;
 }
