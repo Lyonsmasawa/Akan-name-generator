@@ -70,6 +70,6 @@ function genName() {
 
     //Conditions to generate name
     if (gender == "male" && yearOkay == true && dayOkay == true && monthOkay == true) {
-        
+
     }
 }
