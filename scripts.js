@@ -23,8 +23,8 @@ function genName() {
 
     //validate year{
     function validateYear() {
-        if (Number(yearOfBirth) < 0001) {
-            alert("Please enter a valid year(not less than 0, start from year 1)");
+        if (Number(yearOfBirth) < 0001 || Number(yearOfBirth) > 2021 && yearOfBirth.length != 4) {
+            alert("Please enter a valid year(\"0001 - 2021\")");
         } else {
             return true;
         }
