@@ -5,21 +5,12 @@ function genName() {
     let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     //get input values
-    let yearOfBirth = parse.Int(document.getElementById("year").value);
-    let month = parse.Int(document.getElementById("month").value);
-    let day = parse.Int(document.getElementById("day").value);
+    let yearOfBirth = document.getElementById("year").value;
+    let month = Number(document.getElementById("month").value);
+    let day = Number(document.getElementById("day").value);
+    let genders = document.getElementsByName("gender");
 
-    //validate year{
-    function validateYear() {
-        if (yearOfBirth < 1 || yearOfBirth > 2021 && yearOfBirth.tostring().length != 4) {
-            alert("Please enter a valid year(\"0001 - 2021\")");
-        } else {
-            return true;
-        }
-    }
-    let yearOkay = validateYear();
-
-    //validate month
+    // validation functions
     function validateMonth() {
         if (month < 1 || month > 12) {
             alert('Please enter a valid month("1-12")');
@@ -27,14 +18,27 @@ function genName() {
             return true;
         }
     }
+
     let monthOkay = validateMonth();
 
+    //validate year{
+    function validateYear() {
+        if (Number(yearOfBirth) < 0001 || Number(yearOfBirth) > 2021) {
+            if (Number(yearOfBirth).toString().length != 4) {
+                alert("Please enter a valid year(\"0001 - 2021\")");
+            }
+        } else {
+            return true;
+        }
+    }
+    let yearOkay = validateYear();
+
     //validate day
-    function validateDay() {
-        if (day == 2 && (yearOfBirth) % 4 == 0) {
+    function ValidateDay() {
+        if (month === 2 && Number(yearOfBirth) % 4 === 0) {
             if (day < 1 || day > 28) {
                 alert("please enter a valid date(\"1-28\")");
-            } else if (day < 1 || day > 29) {
+            } else if (day < 1 && day > 29) {
                 alert("please enter a valid date(\"1-29\")");
             } else {
                 return true;
@@ -45,77 +49,106 @@ function genName() {
             return true;
         }
     }
-    let dayOkay = validateDay();
+
+    let dayOkay = ValidateDay();
 
     //get gender value
     function getGender() {
-        let userGender = document.getElementsByName("gender");
-        if (userGender.checked[0] == true) {
-            return "male";
-        } else {
-            return "female";
+        for (let gender of genders) {
+            if (gender.checked) {
+                return gender.value;
+            }
         }
     }
-    let gender = getGender();
+
+    let userGender = getGender();
 
     //determine day of the week the user was born
-    function calcDay() {
-        let CC = yearOfBirth.slice(0, 2);
-        let YY = yearOfBirth.slice(2, 4);
-        let MM = month;
-        let DD = day;
-        return Math.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
-    }
-    let dayOfTheWeek = calcDay();
+    let dayOfWeekNumber = Math.floor((((Number(yearOfBirth.slice(0, 2)) / 4) - 2 * Number(yearOfBirth.slice(0, 2)) - 1) +
+        ((5 * Number(yearOfBirth.slice(2, 4)) / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
 
     //Conditions to generate name
-    if (gender == "male" && yearOkay == true && dayOkay == true && monthOkay == true) {
-        if (dayOfTheWeek == 0) {
-            document.getElementById("day-k").innerHTML = dayNames[0];
-            document.getElementById("name-k").innerHTML = maleNames[0];
-        } else if (dayOfTheWeek == 1) {
-            document.getElementById("day-k").innerHTML = dayNames[1];
-            document.getElementById("name-k").innerHTML = maleNames[1];
-        } else if (dayOfTheWeek == 2) {
-            document.getElementById("day-k").innerHTML = dayNames[2];
-            document.getElementById("name-k").innerHTML = maleNames[2];
-        } else if (dayOfTheWeek == 3) {
-            document.getElementById("day-k").innerHTML = dayNames[3];
-            document.getElementById("name-k").innerHTML = maleNames[3];
-        } else if (dayOfTheWeek == 4) {
-            document.getElementById("day-k").innerHTML = dayNames[4];
-            document.getElementById("name-k").innerHTML = maleNames[4];
-        } else if (dayOfTheWeek == 5) {
-            document.getElementById("day-k").innerHTML = dayNames[5];
-            document.getElementById("name-k").innerHTML = maleNames[5];
-        } else if (dayOfTheWeek == 6) {
-            document.getElementById("day-k").innerHTML = dayNames[6];
-            document.getElementById("name-k").innerHTML = maleNames[6];
+    if (userGender == "male" && monthOkay && dayOkay && yearOkay) {
+        switch (dayOfWeekNumber) {
+            case 1:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[0];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[0];
+                document.getElementById("anim").innerHTML = " " + maleNames[0];
+                return false;
+            case 2:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[1];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[1];
+                document.getElementById("anim").innerHTML = " " + maleNames[1];
+                return false;
+            case 3:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[2];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[2];
+                document.getElementById("anim").innerHTML = " " + maleNames[2];
+                return false;
+            case 4:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[3];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[3];
+                document.getElementById("anim").innerHTML = " " + maleNames[3];
+                return false;
+            case 5:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[4];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[4];
+                document.getElementById("anim").innerHTML = " " + maleNames[4];
+                return false;
+            case 6:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[5];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[5];
+                document.getElementById("anim").innerHTML = " " + maleNames[5];
+                return false;
+            case 7:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[6];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[6];
+                document.getElementById("anim").innerHTML = " " + maleNames[6];
+                return false;
+            default:
+                alert("an error occured please try again!");
         }
-    } else if (gender == "female" && yearOkay == true && dayOkay == true && monthOkay == true) {
-        if (dayOfTheWeek == 0) {
-            document.getElementById("day-k").innerHTML = dayNames[0];
-            document.getElementById("name-k").innerHTML = femaleNames[0];
-        } else if (dayOfTheWeek == 1) {
-            document.getElementById("day-k").innerHTML = dayNames[1];
-            document.getElementById("name-k").innerHTML = femaleNames[1];
-        } else if (dayOfTheWeek == 2) {
-            document.getElementById("day-k").innerHTML = dayNames[2];
-            document.getElementById("name-k").innerHTML = femaleNames[2];
-        } else if (dayOfTheWeek == 3) {
-            document.getElementById("day-k").innerHTML = dayNames[3];
-            document.getElementById("name-k").innerHTML = femaleNames[3];
-        } else if (dayOfTheWeek == 4) {
-            document.getElementById("day-k").innerHTML = dayNames[4];
-            document.getElementById("name-k").innerHTML = femaleNames[4];
-        } else if (dayOfTheWeek == 5) {
-            document.getElementById("day-k").innerHTML = dayNames[5];
-            document.getElementById("name-k").innerHTML = femaleNames[5];
-        } else if (dayOfTheWeek == 6) {
-            document.getElementById("day-k").innerHTML = dayNames[6];
-            document.getElementById("name-k").innerHTML = femaleNames[6];
+    } else if (userGender == "female" && monthOkay && dayOkay && yearOkay) {
+        switch (dayOfWeekNumber) {
+            case 1:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[0];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[0];
+                document.getElementById("anim").innerHTML = " " + femaleNames[0];
+                return false;
+            case 2:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[1];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[1];
+                document.getElementById("anim").innerHTML = " " + femaleNames[1];
+                return false;
+            case 3:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[2];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[2];
+                document.getElementById("anim").innerHTML = " " + femaleNames[2];
+                return false;
+            case 4:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[3];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[3];
+                document.getElementById("anim").innerHTML = " " + femaleNames[3];
+                return false;
+            case 5:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[4];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[4];
+                document.getElementById("anim").innerHTML = " " + femaleNames[4];
+                return false;
+            case 6:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[5];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[5];
+                document.getElementById("anim").innerHTML = " " + femaleNames[5];
+                return false;
+            case 7:
+                document.getElementById("inp-name").innerHTML = " " + femaleNames[6];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[6];
+                document.getElementById("anim").innerHTML = " " + femaleNames[6];
+                return false;
+            default:
+                alert("an error occured please try again!");
         }
     } else {
-        return false;
+        alert("Please try again");
     }
 }
